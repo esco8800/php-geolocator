@@ -1,0 +1,22 @@
+{
+    "name": "esco8800/php-geolocator",
+    "description": "Default components for locate for ip",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.*"
+    },
+    "authors": [
+        {
+            "name": "Ilya Semenov",
+            "email": "mr.ilya2015@mail.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "esco8800\\phpgeolocator\\": "src/",
+            "esco8800\\phpgeolocator\\test\\": "tests/"
+        }
+    }
+}
