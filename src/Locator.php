@@ -6,7 +6,7 @@
 namespace esco8800\phpgeolocator;
 
 
-class Locator
+class Locator implements LocatorInterface
 {
     /**
      * @var HttpClient Клиент для http запросов

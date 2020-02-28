@@ -41,5 +41,7 @@ docker/home/*
 docker/log/*
 !.gitkeep
 
+phpunit.xml
+
 
 

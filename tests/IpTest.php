@@ -19,7 +19,7 @@ class IpTest extends TestCase
 
     public function testIp6(): void
     {
-        $ip = new Ip($value = '8.8.8.8.8.8');
+        $ip = new Ip($value = '2001:4860:4860::8888');
         self::assertEquals($value, $ip->getValue());
     }
 

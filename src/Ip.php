@@ -18,8 +18,8 @@ final class Ip
             throw new \InvalidArgumentException('Empty IP');
         }
 
-        if (filter_var($ip, FILTER_VALIDATE_IP) === false){
-            throw new \InvalidArgumentException('Invalid IP' . $ip);
+        if (!$this->isValidIp($ip)){
+            throw new \InvalidArgumentException('Invalid IP ' . $ip);
         }
 
         $this->value = $ip;
@@ -28,6 +28,17 @@ final class Ip
     public function getValue(): string
     {
         return $this->value;
+    }
+
+    /**
+     * Функция валидации ip адреса
+     *
+     * @param string $ip
+     * @return bool
+     */
+    private function isValidIp(string $ip): bool
+    {
+        return $result = filter_var($ip, FILTER_VALIDATE_IP) === false ? false : true;
     }
 
 }

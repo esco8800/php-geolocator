@@ -15,11 +15,7 @@ class LocatorTest extends TestCase
     public function testSuccess(): void
     {
         $client = $this->createMock(HttpClient::class);
-        $client->method('get')->willReturn([
-            'country_name' => 'United States',
-            'state_prov' => 'California',
-            'city' => 'Mountain View'
-        ]);
+        $client->method('get')->willReturn('{"country_name":"United States","state_prov":"California","city":"Mountain View"}');
 
         $locator = new Locator($client, 'key');
         $location = $locator->locate(new Ip('8.8.8.8'));
@@ -33,11 +29,7 @@ class LocatorTest extends TestCase
     public function testNotFound(): void
     {
         $client = $this->createMock(HttpClient::class);
-        $client->method('get')->willReturn([
-            'country_name' => 'United States',
-            'state_prov' => 'California',
-            'city' => 'Mountain View'
-        ]);
+        $client->method('get')->willReturn('{"country_name":"-","state_prov":"-","city":"-"}');
 
         $locator = new Locator($client, 'key');
         $location = $locator->locate(new Ip('0.0.0.1'));

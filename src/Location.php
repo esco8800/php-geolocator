@@ -22,8 +22,8 @@ class Location
 
     public function __construct(
         string $country,
-        ?string $region,
-        ?string $city
+        ?string $region = null,
+        ?string $city = null
     ) {
         $this->country = $country;
         $this->region = $region;
